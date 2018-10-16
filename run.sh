@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
 
 # Set paths
-source paths
+INCEPTION_V1_PRETRAINED=pretrained/bvlc_googlenet.caffemodel.pth
+CPM_PRETRAINED=pretrained/pose_iter_440000.caffemodel.pth
+
+MARKET1501_DATA_ROOT=../market
+
 export MARKET1501_DATA_ROOT=$MARKET1501_DATA_ROOT
 export MARKET1501_TRAIN_LIST=$MARKET1501_TRAIN_LIST
 export INCEPTION_V1_PRETRAINED=$INCEPTION_V1_PRETRAINED
 export CPM_PRETRAINED=$CPM_PRETRAINED
 
-source $CONFIGURE_PATH
+CONFIGURE_PATH="./configs/config.sh"
 
 # Download pretrained network weights
 if ! [ -d pretrained ]; then
@@ -41,5 +45,6 @@ if [ "$USE_CAFFE_SAMPLER" = true ]; then
     STR_PARAM="$STR_PARAM --caffe-sampler"
 fi
 
+cd  /userhome/reid/part_bilinear_reid
 # Run!
-CUDA_VISIBLE_DEVICES=$GPU_ID $PYTHON train.py $STR_PARAM
+python train.py $STR_PARAM
