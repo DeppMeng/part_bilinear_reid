@@ -4,7 +4,7 @@
 INCEPTION_V1_PRETRAINED=pretrained/bvlc_googlenet.caffemodel.pth
 CPM_PRETRAINED=pretrained/pose_iter_440000.caffemodel.pth
 
-MARKET1501_DATA_ROOT=../market
+MARKET1501_DATA_ROOT="/userhome/reid/part_bilinear_reid/data/market1501/raw/Market-1501-v15.09.15"
 
 export MARKET1501_DATA_ROOT=$MARKET1501_DATA_ROOT
 export MARKET1501_TRAIN_LIST=$MARKET1501_TRAIN_LIST
@@ -12,7 +12,10 @@ export INCEPTION_V1_PRETRAINED=$INCEPTION_V1_PRETRAINED
 export CPM_PRETRAINED=$CPM_PRETRAINED
 
 PYTHON='python'
+<<<<<<< HEAD
 EXP_ID='tmp'
+=======
+>>>>>>> origin/master
 GPU_ID="0,1"
 
 # model
