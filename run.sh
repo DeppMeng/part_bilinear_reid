@@ -12,10 +12,6 @@ export INCEPTION_V1_PRETRAINED=$INCEPTION_V1_PRETRAINED
 export CPM_PRETRAINED=$CPM_PRETRAINED
 
 PYTHON='python'
-<<<<<<< HEAD
-EXP_ID='tmp'
-=======
->>>>>>> origin/master
 GPU_ID="0,1"
 
 # model
